@@ -1,31 +1,35 @@
 #coffee script basics
 
+console.log("**** Functions *****")
+
 myFunction = (num) -> 
-  console.log("yo dude")
-  console.log("two") unless num == 1
+  console.log("hello world")
+  console.log(num + " = one") if num == 1
+  console.log(num + " = two") unless num == 1
 
-console.log("im here")
+myFunction(1)
+myFunction(2)
 
-# objects as hashes
+console.log("**** Objects and Iteration *****")
+
 myObj = {}
 
 myObj.count = (num) -> 
   console.log("number " + num)
-  console.log("...") unless num == 5
 
 numbers = [1..5]
 
 for number in numbers
   myObj.count(number)
 
-#prototypes (capitalize by convention)
+console.log("**** Prototypes *****")
 
 Boy = -> # by convention, constructor names are capitalized
 Boy::sing = -> console.log "It ain't easy being a boy named Sue"
 sue = new Boy()
 sue.sing()
 
-
+console.log("**** Classes *****")
 #class Boy
 class Person
   constructor: (@name) ->
@@ -51,7 +55,7 @@ girl1 = new Girl("Jane").list()
 
 class Baby extends Person
   cry: (num) ->
-    console.log("maaaa") if num < 5
+    console.log("maaaa") if num < 3
 
 baby1 = new Baby("Jack")
 for num in [0..10]
