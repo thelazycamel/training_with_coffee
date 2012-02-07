@@ -32,13 +32,13 @@ sue.sing()
 console.log("**** Classes *****")
 #class Boy
 class Person
-  constructor: (@name) ->
-    this.number = Person.count++
-    this.name = @name
+  constructor: (name) ->
+    @number = Person.count++
+    @name = name
 
   #method
   list: ->
-    console.log("Person number #{this.number} is called #{this.name}")
+    console.log("Person number #{@number} is called #{@name}")
 
 #set the count variable
 Person.count = 1
@@ -49,7 +49,7 @@ boy2 = new Person("Joe").list()
 class Girl extends Person
   list: ->
     super
-    console.log("#{this.name} is a girl")
+    console.log("#{@name} is a girl")
 
 girl1 = new Girl("Jane").list()
 
